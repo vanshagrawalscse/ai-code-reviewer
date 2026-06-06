@@ -7,7 +7,11 @@ const app = express();
 
 
 app.use(cors({
-    origin: ['https://ai-code-reviewer-liard-seven.vercel.app', 'http://localhost:5173']
+    origin: [
+        'https://ai-code-reviewer-liard-seven.vercel.app', 
+        'http://localhost:5173', 
+        'http://localhost:5174'
+    ]
 }));
 // Rate Limiter
 const limiter = rateLimit({
