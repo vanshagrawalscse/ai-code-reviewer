@@ -4,6 +4,7 @@ const aiRoutes = require('./routes/ai.routes');
 const cors = require('cors');
 
 const app = express();
+app.use(express.json());
 
 
 app.use(cors()); // Ye line sabse simple hai, koi bhi port se access allow karegi
@@ -15,7 +16,7 @@ const limiter = rateLimit({
         error: 'Too many requests. Please try again later.'
     }
 });
-app.use(express.json());
+
 
 // Sirf AI routes par apply hoga
 app.use('/ai', limiter, aiRoutes);
