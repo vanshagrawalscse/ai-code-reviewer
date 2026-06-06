@@ -6,13 +6,7 @@ const cors = require('cors');
 const app = express();
 
 
-app.use(cors({
-    origin: [
-        'https://ai-code-reviewer-liard-seven.vercel.app', 
-        'http://localhost:5173', 
-        'http://localhost:5174'
-    ]
-}));
+app.use(cors()); // Ye line sabse simple hai, koi bhi port se access allow karegi
 // Rate Limiter
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
