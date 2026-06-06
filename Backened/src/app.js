@@ -5,7 +5,10 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+
+app.use(cors({
+    origin: 'https://ai-code-reviewer-liard-seven.vercel.app'
+}));
 
 // Rate Limiter
 const limiter = rateLimit({
